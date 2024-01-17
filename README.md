@@ -7,7 +7,7 @@ npm run dev
 ```
 
 ... and visit `http://localhost:3000/`.
-You should see below logs in both browser console:
+You should see below logs in browser console:
 ```
 provideFoo plugin
 1.injectFoo middleware - regular
