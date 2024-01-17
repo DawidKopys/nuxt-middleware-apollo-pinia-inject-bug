@@ -1,75 +1,21 @@
-# Nuxt 3 Minimal Starter
+# Reproduction of an issue with useApolloClient from `@vue/apollo-composable`
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
+To run this example
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+... and visit `http://localhost:3000/`.
+You should see below logs in both browser console:
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+provideFoo plugin
+1.injectFoo middleware - regular
+  injected foo : foo
+2.injectFoo middleware - app.runWithContext() -> inject()
+  [Vue warn]: inject() can only be used inside setup() or functional components.
+  injected foo : undefined
+3.injectFoo middleware - useCounterStore() -> useQuery()
+  [Vue warn]: inject() can only be used inside setup() or functional components.
+  [Vue warn]: inject() can only be used inside setup() or functional components.
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
